@@ -46,8 +46,8 @@ let cupdinate = {
 }
 
 function rancake() {
-  let ranx = Math.floor(Math.random() * 860);
-  let rany = Math.floor(Math.random() * 478);
+  let ranx = Math.floor(Math.random() * 850);
+  let rany = Math.floor(Math.random() * 500);
   return [ranx, rany];
 }
 
