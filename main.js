@@ -8,13 +8,12 @@ const gameEngine = new GameEngine();
  * @param {object}   data    the game state.
  */
 function mainLoop(data) {
-
-  for (let i=1; i<200; i+=1){
-    for (let j=1; j<200; j+=1){
-      gameEngine.fillPixels([[i,j]], 255, 0, 0 , 255);
-    }
+  gameEngine.fillPixels([[100,100], [100,101], [100,102], [103,104], [100,105], [100,106], [101,102], [103,104]], 255, 0, 0 , 255);
+  let num = 100;
+  while (num<300){
+    gameEngine.fillPixels([num,300]);
+    num+=1;
   }
-  gameEngine.playSound("dingDing");
 }
 
 gameEngine.startMainLoop(mainLoop, {});
