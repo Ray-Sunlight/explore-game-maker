@@ -8,7 +8,15 @@ const gameEngine = new GameEngine();
  * @param {object}   data    the game state.
  */
 function mainLoop(data) {
-  gameEngine.fillPixels([[0,0], [0, 1]], 255, 0, 0 , 255);
+  let array=[];
+  mousex = gameEngine.getMouseX();
+  for (let i=1; i<200; ){
+    array.push(mousex+i);
+  }
+
+
+  gameEngine.fillPixels([[10,0], [10, 1], [10, 2], [10,3], [10, 4], [10, 5]], 255, 0, 0 , 255);
+
 }
 
 gameEngine.startMainLoop(mainLoop, {});
