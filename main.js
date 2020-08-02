@@ -45,9 +45,24 @@ let cupdinate = {
   y:25
 }
 
-function mainLoop(data) {
-  cupcake_show(cupdinate.x, cupdinate.y, gameEngine);
+function rancake() {
+  let ranx = Math.floor(Math.random() * 850);
+  let rany = Math.floor(Math.random() * 500);
+  return [ranx, rany];
+}
 
+function mainLoop(data) {
+  if (gameEngine.isKeyHeld(" ")) {
+    cupcake_delete(cupdinate.x, cupdinate.y, gameEngine)
+    let new1 = rancake();
+    cupdinate.x = new1[0];
+    cupdinate.y = new1[1];
+    cupcake_show(cupdinate.x, cupdinate.y, gameEngine);
+  }
+
+  else {
+      cupcake_show(cupdinate.x, cupdinate.y, gameEngine);
+  }
 }
 
 gameEngine.startMainLoop(mainLoop, {});
