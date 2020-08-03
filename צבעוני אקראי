@@ -43,10 +43,10 @@ function cupcake_delete(x, y, size, r, g, b, gameEngine) {
 let cupdinate = {
   x:25,
   y:25,
-  size:1,
-  r:1,
-  g:1,
-  b:1
+  size:10,
+  r:255,
+  g:255,
+  b:255
 }
 
 function rancake() {
@@ -57,9 +57,16 @@ function rancake() {
 
 function mainLoop(data) {
 
+
   if (gameEngine.isKeyHeld("l")){
     cupdinate.size+=1;
+  }
 
+  //black
+  if (gameEngine.isKeyHeld("d")) {
+    cupdinate.g=0;
+    cupdinate.r=0;
+    cupdinate.b=0;
   }
 
   //green
@@ -67,9 +74,10 @@ function mainLoop(data) {
     cupdinate.g=255;
     cupdinate.r=0;
     cupdinate.b=0;
+    console.log("works");
   }
 
-  //red
+   //red
   if (gameEngine.isKeyHeld("r")){
     cupdinate.r=255;
     cupdinate.g=0;
