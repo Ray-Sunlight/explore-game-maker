@@ -281,19 +281,12 @@ function clear (r, g, b, a, gameEngine) {
 //main function
 function mainLoop(data) 
 {  
-  //music 
-  if (!gameEngine.isSoundPlaying("song"))
-  {
-    gameEngine.playSound("song");
-  }
-
-
   //start game writing
   if ((gameformation.caked===0)&&(gameformation.looped===0)) 
   {
     if (gameformation.wins===0 && gameformation.loses===0) {
       gameEngine.playSound("drumroll");
-      gameEngine.writeParagraph("<b style='font-size:30px'>welcome!</br>feed the elephant</b>");
+      gameEngine.writeParagraph("<b style='font-size:17px'>welcome!</br>direct the elephant to eat flowers</br>press arrors to move elephant</br>play with screen at 70%</br>don't waste time</br>or the elephant will get hungry again</br>if you can feed him enough you win!</br>the color of the elephant changes</br>and indicates how hungry he is</br>red=hungry</br>blue=less hungry</b>");
     }
 
     console.log("the elephant is hungry. feed it or be food!");
@@ -311,8 +304,8 @@ function mainLoop(data)
     gameformation.time+=1;
     elformation.b-=10;
     elformation.r+=10;
-    console.log ("to much time has passed! one flower less");
-    gameEngine.writeParagraph("<b style='font-size:30px'>to much time!</br>minus 1 flower</b>");
+    console.log ("too much time has passed! one flower less");
+    gameEngine.writeParagraph("<b style='font-size:30px'>to much time</br>minus 1 flower</b>");
     gameEngine.playSound("badBoing");
   }
 
@@ -344,7 +337,7 @@ function mainLoop(data)
  
     console.log ("flowers eaten: ", gameformation.caked);
     gameEngine.writeParagraph("<b style='font-size:30px'>flowers eaten:</br>"+gameformation.caked+"</b>");
-    gameEngine.playSound("chime");
+    gameEngine.playSound("reminder");
   }
 
   //checks if flower was eaten
@@ -354,7 +347,7 @@ function mainLoop(data)
     cupdinate.x = new1[0];
     cupdinate.y = new1[1];
     cupcake_show(cupdinate.x, cupdinate.y, gameEngine);
-    gameEngine.playSound("thing");
+    gameEngine.playSound("chime");
     let add1= Math.floor(Math.random() * 3 + 1);
     console.log("that was equel to ", add1, "regular flowers");
     gameformation.caked+=add1;
@@ -441,5 +434,4 @@ function mainLoop(data)
   }
 }
 
-gameEngine.playSound("song");
 gameEngine.startMainLoop(mainLoop, {});
